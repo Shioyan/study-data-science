@@ -1,0 +1,68 @@
+[
+  {
+    "id": "g3_08_001",
+    "grade": "grade3",
+    "topic_id": "08_probability-distributions",
+    "question": "コインを4回投げたとき、表が出る回数 X の期待値はいくつか。",
+    "options": [
+      "2",
+      "1",
+      "0.5",
+      "4"
+    ],
+    "correct": 0,
+    "explanation": "X は二項分布 B(4, 0.5) に従う。二項分布の期待値は np = 4 × 0.5 = 2。直感的にも「4回投げて半分は表」という期待に一致する。",
+    "wrong_explanations": {
+      "1": "正しい選択肢です。",
+      "2": "1は誤り。np = 4 × 0.5 = 2が正しい。",
+      "3": "0.5はコイン1回の表が出る確率 p そのもの。期待値は投回数×確率 = 4×0.5 = 2。",
+      "4": "4は試行回数 n そのもの。期待値はすべて表になるわけではなく np = 2。"
+    },
+    "difficulty": "基礎",
+    "related_section": "/grade/grade3?topic=08_probability-distributions"
+  },
+  {
+    "id": "g3_08_002",
+    "grade": "grade3",
+    "topic_id": "08_probability-distributions",
+    "question": "正規分布 N(50, 10²) において、値が40以上60以下の範囲に含まれる確率はおよそいくつか。",
+    "options": [
+      "約68%",
+      "約95%",
+      "約99.7%",
+      "約50%"
+    ],
+    "correct": 0,
+    "explanation": "40から60はμ ± σの範囲（50 ± 10）。正規分布の68-95-99.7ルールより、μ ± 1σの範囲には約68%のデータが含まれる。",
+    "wrong_explanations": {
+      "1": "正しい選択肢です。",
+      "2": "約95%はμ ± 2σ（この場合30〜70）の範囲に含まれる割合。",
+      "3": "約99.7%はμ ± 3σ（この場合20〜80）の範囲に含まれる割合。",
+      "4": "50%は正規分布の中央値（μ）より下の割合。40〜60の範囲（±1σ）は68%。"
+    },
+    "difficulty": "標準",
+    "related_section": "/grade/grade3?topic=08_probability-distributions"
+  },
+  {
+    "id": "g3_08_003",
+    "grade": "grade3",
+    "topic_id": "08_probability-distributions",
+    "question": "確率変数 X が二項分布 B(100, 0.3) に従うとき、X の分散はいくつか。",
+    "options": [
+      "21",
+      "30",
+      "9",
+      "4.58"
+    ],
+    "correct": 0,
+    "explanation": "二項分布 B(n, p) の分散は V(X) = np(1-p) = 100 × 0.3 × (1-0.3) = 100 × 0.3 × 0.7 = 21。標準偏差は √21 ≈ 4.58。",
+    "wrong_explanations": {
+      "1": "正しい選択肢です。",
+      "2": "30は期待値 E(X) = np = 100 × 0.3 = 30。期待値と分散を混同している。",
+      "3": "9は誤り。np(1-p) = 100×0.3×0.7 = 21が正しい。",
+      "4": "4.58は標準偏差（√21 ≈ 4.58）の値。分散は標準偏差の二乗なので21が正しい。"
+    },
+    "difficulty": "応用",
+    "related_section": "/grade/grade3?topic=08_probability-distributions"
+  }
+]
