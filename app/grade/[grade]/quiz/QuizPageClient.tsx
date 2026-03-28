@@ -21,12 +21,17 @@ interface AnswerState {
 
 export default function QuizPageClient({
   grade,
-  questions,
+  questions: allQuestions,
   topicFilter,
 }: QuizPageClientProps) {
+  function pickRandom(src: QuizQuestion[]) {
+    return [...src].sort(() => Math.random() - 0.5).slice(0, Math.min(10, src.length));
+  }
+
+  const [questions, setQuestions] = useState<QuizQuestion[]>(() => pickRandom(allQuestions));
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState<AnswerState[]>(
-    questions.map(() => ({ selectedOption: null, isAnswered: false }))
+    () => questions.map(() => ({ selectedOption: null, isAnswered: false }))
   );
   const [isFinished, setIsFinished] = useState(false);
 
@@ -65,8 +70,10 @@ export default function QuizPageClient({
   }
 
   function handleRetry() {
+    const newQuestions = pickRandom(allQuestions);
+    setQuestions(newQuestions);
     setCurrentIndex(0);
-    setAnswers(questions.map(() => ({ selectedOption: null, isAnswered: false })));
+    setAnswers(newQuestions.map(() => ({ selectedOption: null, isAnswered: false })));
     setIsFinished(false);
   }
 
